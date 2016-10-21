@@ -7,9 +7,9 @@
 
 
 body {
-	font-family:'Open Sans', Arial, sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size:14px;
-	font-weight:300;
+	font-weight:500;
 	line-height:1.6em;
 	color:#fff;
 	background-color:#fff;
@@ -23,7 +23,7 @@ hi,h2,h3,h4,h5,h6 {
 
 p {
 	color:#333;
-	font-size:13px;
+	font-size:14px;
 }
 a {
     text-decoration:none;
