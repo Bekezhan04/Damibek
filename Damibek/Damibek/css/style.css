@@ -25,6 +25,7 @@ p {
 	color:#333;
 	font-size:14px;
 }
+
 a {
     text-decoration:none;
     transition: all 0.1s ease-in-out;
@@ -34,6 +35,17 @@ a {
     outline: none;
 	color:#333;
 }
+/*Дополнительный тип для ссылок которые в теле страницы а не в загаловках*/
+.a_onpage {
+    text-decoration:none;
+    transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    outline: none;
+	color:#428bca;
+}
+
 a:hover {
 	text-decoration: none;
 	color:#eee;	
