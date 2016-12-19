@@ -316,8 +316,8 @@
     <Content Include="Views\Home\about.cshtml" />
     <Content Include="Views\Home\services.cshtml" />
     <Content Include="Views\Home\portfolio.cshtml" />
-    <Content Include="Views\Home\blog.cshtml" />
     <Content Include="Views\Home\contact.cshtml" />
+    <Content Include="Views\Home\Solution.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -36,6 +36,10 @@ namespace Damibek.Controllers
             return View();
         }
 
+        public ActionResult Solution(int? solution_id)
+        {
+            return View();
+        }
 
     }
 }
