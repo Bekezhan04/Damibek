@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Damibek", "Damibek\Damibek.csproj", "{D8C11090-06CB-4C35-A06A-B34F2D3EEBF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Damibek.Data", "Damibek.Data\Damibek.Data.csproj", "{72C77B8D-DC97-4D91-88F8-9C4655EAF0ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D8C11090-06CB-4C35-A06A-B34F2D3EEBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8C11090-06CB-4C35-A06A-B34F2D3EEBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8C11090-06CB-4C35-A06A-B34F2D3EEBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C77B8D-DC97-4D91-88F8-9C4655EAF0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C77B8D-DC97-4D91-88F8-9C4655EAF0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C77B8D-DC97-4D91-88F8-9C4655EAF0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C77B8D-DC97-4D91-88F8-9C4655EAF0ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
