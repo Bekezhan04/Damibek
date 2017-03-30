@@ -313,20 +313,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LayoutCrumb.cshtml" />
-    <Content Include="Views\Home\about.cshtml" />
-    <Content Include="Views\Home\services.cshtml" />
-    <Content Include="Views\Home\portfolio.cshtml" />
-    <Content Include="Views\Home\contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Solution.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Damibek.Data\Damibek.Data.csproj">
-      <Project>{72c77b8d-dc97-4d91-88f8-9c4655eaf0ed}</Project>
-      <Name>Damibek.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

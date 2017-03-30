@@ -13,25 +13,25 @@ namespace Damibek.Controllers
             return View();
         }
 
-        public ActionResult about()
+        public ActionResult About()
         {
             return View();
         }
 
-        public ActionResult services()
+        public ActionResult Services()
         {
             return View();
         }
 
-        public ActionResult portfolio()
+        public ActionResult Portfolio()
         {
             return View();
         }
-        public ActionResult blog()
+        public ActionResult Blog()
         {
             return View();
         }
-        public ActionResult contact()
+        public ActionResult Contact()
         {
             return View();
         }
