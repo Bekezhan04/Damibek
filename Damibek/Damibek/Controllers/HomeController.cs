@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Damibek.DAL;
+using Damibek.Models;
 
 namespace Damibek.Controllers
 {
     public class HomeController : Controller
     {
+        Repository db;
+        public HomeController()
+        {
+            db = new Repository();
+
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -23,9 +32,13 @@ namespace Damibek.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Portfolio()
         {
-            return View();
+            Portfolio model = new Portfolio();
+            model.Projects = db.GetProject();
+            return View(model);
+
         }
         public ActionResult Blog()
         {

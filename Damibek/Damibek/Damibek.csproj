@@ -150,9 +150,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Portfolio.cs" />
+    <Compile Include="Models\RowProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextTemplate1.cs">
       <AutoGen>True</AutoGen>
@@ -161,6 +164,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Data.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -218,6 +224,8 @@
     <Content Include="images\partners\partner4.png" />
     <Content Include="images\partners\partner5.png" />
     <Content Include="images\partners\partner_bg.png" />
+    <Content Include="images\portfolio\allow-48.png" />
+    <Content Include="images\portfolio\allow-64.png" />
     <Content Include="images\portfolio\full\item1.png" />
     <Content Include="images\portfolio\full\item10.png" />
     <Content Include="images\portfolio\full\item11.png" />
@@ -316,10 +324,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="css\bootstrap-theme.css.map" />

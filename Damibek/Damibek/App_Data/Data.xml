@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Portfolios>
+    <Project>
+      <url></url>
+      <Caption>Электронный архив</Caption>
+      <Description>Хранит документы и прочие договора в электронном виде очень выгодно предприятию
+      </Description>
+      <Activ>True</Activ>
+    </Project>
+    <Project>
+      <url></url>
+      <Caption>Регистрация и учет документов компании</Caption>
+      <Description>
+        Заведение документов и оборот документов в нашей системе
+      </Description>
+      <Activ>False</Activ>
+    </Project>  
+    <Project>
+      <url></url>
+      <Caption>Массовая обработка PDF документов</Caption>
+      <Description>
+        Заведение документов и оборот документов в нашей системе
+      </Description>
+      <Activ>True</Activ>
+    </Project>     
+    <Project>
+      <url></url>
+      <Caption>Обзвон клиентов</Caption>
+      <Description>
+        Заведение документов и оборот документов в нашей системе
+      </Description>
+      <Activ>True</Activ>
+    </Project> 
+    <Project>
+      <url></url>
+      <Caption>Посищение клиентов и бронирование очереди</Caption>
+      <Description>
+        Заведение документов и оборот документов в нашей системе
+      </Description>
+      <Activ>True</Activ>
+    </Project>     
+    <Project>
+      <url></url>
+      <Caption>Экспорт, хранение и управление даными в датацентрах</Caption>
+      <Description>
+        Заведение документов и оборот документов в нашей системе
+      </Description>
+      <Activ>True</Activ>
+    </Project>        
+  </Portfolios>
+</Root>
