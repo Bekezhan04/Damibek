@@ -19,7 +19,8 @@ namespace Damibek.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            Index model = new Index("Index");
+            return View(model);
         }
 
         public ActionResult About()
@@ -36,7 +37,6 @@ namespace Damibek.Controllers
         public ActionResult Portfolio()
         {
             Portfolio model = new Portfolio();
-            model.Projects = db.GetProject();
             return View(model);
 
         }
@@ -49,10 +49,14 @@ namespace Damibek.Controllers
             return View();
         }
 
-        public ActionResult Solution(int? solution_id)
+        [HttpGet]
+        public ActionResult Solution(int? id)
         {
-            return View();
+            Solution model = new Solution(id.ToString());
+            model.test = "ddddddddddddddddd";
+            return View(model);
         }
+
 
     }
 }

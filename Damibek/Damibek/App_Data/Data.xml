@@ -3,50 +3,62 @@
   <Portfolios>
     <Project>
       <url></url>
+      <Id>1</Id>
       <Caption>Электронный архив</Caption>
       <Description>Хранит документы и прочие договора в электронном виде очень выгодно предприятию
       </Description>
       <Activ>True</Activ>
+      <PageName>Index</PageName>
     </Project>
     <Project>
       <url></url>
+      <Id>2</Id>
       <Caption>Регистрация и учет документов компании</Caption>
       <Description>
         Заведение документов и оборот документов в нашей системе
       </Description>
       <Activ>False</Activ>
+      <PageName>Index</PageName>
     </Project>  
     <Project>
       <url></url>
+      <Id>3</Id>
       <Caption>Массовая обработка PDF документов</Caption>
       <Description>
         Заведение документов и оборот документов в нашей системе
       </Description>
       <Activ>True</Activ>
+      <PageName>Index</PageName>
     </Project>     
     <Project>
       <url></url>
+      <Id>4</Id>
       <Caption>Обзвон клиентов</Caption>
       <Description>
         Заведение документов и оборот документов в нашей системе
       </Description>
       <Activ>True</Activ>
+      <PageName>Portfolio</PageName>
     </Project> 
     <Project>
       <url></url>
+      <Id>5</Id>
       <Caption>Посищение клиентов и бронирование очереди</Caption>
       <Description>
         Заведение документов и оборот документов в нашей системе
       </Description>
       <Activ>True</Activ>
+      <PageName>Portfolio</PageName>
     </Project>     
     <Project>
       <url></url>
+      <Id>6</Id>
       <Caption>Экспорт, хранение и управление даными в датацентрах</Caption>
       <Description>
         Заведение документов и оборот документов в нашей системе
       </Description>
       <Activ>True</Activ>
+      <PageName>Portfolio</PageName>
     </Project>        
   </Portfolios>
 </Root>

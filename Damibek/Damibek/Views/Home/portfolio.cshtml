@@ -24,19 +24,21 @@
         <div class="col-md-12">
             <div class="media">
                 <ul>
-                    @foreach(RowProject row in Model.Projects)
-                    { 
+                    
+                    @foreach (Project row in Model.Projects)
+                    {
                         <li>
                             <div class="media-left">
                                 <img src="~/images/portfolio/allow-30.png" />
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">@row.Name</h4>
-                                <p>@row.Description
+                                <h4 class="media-heading"> @Html.ActionLink(@row.Name, "Solution", "Home", new { @id = @row.Id }, null)</h4>
+                                <p>
+                                    @row.Description
                                 </p>
                             </div>
-                        </li>   
-                    }          
+                        </li>
+                    }           
                 </ul>
             </div>
         </div>

@@ -1,6 +1,12 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@model Damibek.Models.Index
+@using Damibek.Models;
+
+
+
 <section id="main-slider" class="no-margin">
     <div class="carousel slide">
         <div class="carousel-inner">
@@ -143,36 +149,30 @@
 </div>
 <div class="lates">
     <div class="container">
-        <div class="text-center">
-            <h2>Портфолио</h2>
-        </div>
+>
         <div class="col-md-12">
             <div class="media">
                 <ul>
-                    <li>
-                        <div class="media-left">
-                            <img src="~/images/portfolio/allow-30.png" />
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Бизнес анализ</h4>
-                            <p>
-                                Наши сотрудники приезжают к вам и мы обсуждаем общую концепцию вашего проекта или возможно предлогаем уже готовые наши решение.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media-left">
-                            <img src="~/images/portfolio/allow-30.png" />
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Написание ТЗ и общей модели проекта</h4>
-                            <p>
-                                Описываем техническое описание проекта возможно делаем призентации для наглядной картины после согласование с заказчиком переходим к следующему шагу.
-                            </p>
-                        </div>
-                    </li>
-                </ul>
+                    @foreach (Project row in Model.Projects)
+                    {
+                        <li>
+                            <div class="media-left">
+                                <img src="~/images/portfolio/allow-30.png" />
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"> @Html.ActionLink(@row.Name, "Solution", "Home", new { @id=@row.Id }, null)</h4>
+                                <p>
+                                    @row.Description
+                                </p>
+                            </div>
+                        </li>
+                    }  
+                </ul>            
             </div>
+        </div>
+      
+        <div class="text-center">
+            @Html.ActionLink("Посмотреть все проекты", "Portfolio", "Home", null, new { @class = "a_onpage", solution_id = 1 })
         </div>
     </div>
 </div>

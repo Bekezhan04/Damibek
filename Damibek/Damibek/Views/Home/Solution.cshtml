@@ -1,11 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "Solution";
+
     Layout = "~/Views/Shared/_LayoutCrumb.cshtml";
 }
 
+@model Damibek.Models.Solution  
+
 <section id="Solution">
     <div class="container">
+
+        <h3> @Html.LabelFor(m => m.test) </h3>
+        <hr>
+
         <div class="center">
             <p>Solution</p>
         </div>

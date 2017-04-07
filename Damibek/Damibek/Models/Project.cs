@@ -5,9 +5,10 @@ using System.Web;
 
 namespace Damibek.Models
 {
-    public class RowProject
+    public class Project
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Id { get; set; }
     }
 }
