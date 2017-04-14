@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Damibek.Models
 {
-    public class Index:ModelBase
+    public class Index : ModelBase
     {
         public Index()
         {
@@ -18,5 +18,7 @@ namespace Damibek.Models
         {
 
         }
+
+
     }
 }

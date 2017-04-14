@@ -61,4 +61,32 @@
       <PageName>Portfolio</PageName>
     </Project>        
   </Portfolios>
+
+  <Pages>
+    <Page>
+      <code>About</code>
+      <name>О компании</name>
+    </Page>
+    <Page>
+      <code>Contact</code>
+      <name>Контакты</name>
+    </Page>  
+    <Page>
+      <code>Index</code>
+      <name>Главная</name>
+    </Page> 
+    <Page>
+      <code>Portfolio</code>
+      <name>Портфолио</name>
+    </Page>  
+    <Page>
+      <code>Services</code>
+      <name>Услуги</name>
+    </Page>  
+    <Page>
+      <code>Solution</code>
+      <name>Проекты</name>
+    </Page>      
+  </Pages>
+
 </Root>

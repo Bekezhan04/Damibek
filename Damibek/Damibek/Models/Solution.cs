@@ -12,7 +12,5 @@ namespace Damibek.Models
             this.Project = repository.GetProjectById(id);
         }
         public Project Project { get; set; }
-
-        public string test { get; set; }
     }
 }

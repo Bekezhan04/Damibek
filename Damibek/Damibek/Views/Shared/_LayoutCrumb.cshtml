@@ -7,8 +7,21 @@
 <div id="breadcrumb">
     <div class="container">
         <div class="breadcrumb">
-            <li><a href="index.html">@Html.ActionLink("Домой", "Index", "Home", null, new { @class = "active" })</a></li>
-            <li>About Us</li>
+            <li>@Html.ActionLink("Домой", "Index", "Home")</li>
+            @if (@ViewContext.RouteData.Values["action"].ToString() == "Solution")
+            {
+                <li>Портфолио</li>
+            }
+            else 
+            { 
+                <li> @Model.GetPageName( @ViewContext.RouteData.Values["action"].ToString() )   </li>
+            }
+
+             @if (@ViewContext.RouteData.Values["action"].ToString() == "Solution")
+             {
+                <li> @Model.GetPageName(@ViewContext.RouteData.Values["action"].ToString())   </li>
+             }
+
         </div>
     </div>
 </div>

@@ -25,12 +25,14 @@ namespace Damibek.Controllers
 
         public ActionResult About()
         {
-            return View();
+            About model = new About();
+            return View(model);
         }
 
         public ActionResult Services()
         {
-            return View();
+            Services model = new Services();
+            return View(model);
         }
 
         [HttpGet]
@@ -46,14 +48,14 @@ namespace Damibek.Controllers
         }
         public ActionResult Contact()
         {
-            return View();
+            Contact model = new Contact();
+            return View(model);
         }
 
         [HttpGet]
         public ActionResult Solution(int? id)
         {
             Solution model = new Solution(id.ToString());
-            model.test = "ddddddddddddddddd";
             return View(model);
         }
 

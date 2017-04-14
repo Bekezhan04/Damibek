@@ -18,5 +18,10 @@ namespace Damibek.Models
             this.Projects = repository.GetAllProjects(pagename);
         }
         public List<Project> Projects { get; set; } 
+
+        public string GetPageName(string actionName)
+        {
+            return repository.GetPageNameByCode(actionName);
+        }
     }
 }

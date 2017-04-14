@@ -49,11 +49,40 @@
                     <div class="navbar-collapse collapse">
                         <div class="menu">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation">@Html.ActionLink("Главная", "Index", "Home", null, new { @class = "active" })</li>
-                                <li role="presentation">@Html.ActionLink("О компании", "About", "Home")</li>
-                                <li role="presentation">@Html.ActionLink("Услуги", "Services", "Home")</li>
-                                <li role="presentation">@Html.ActionLink("Портфолио", "Portfolio", "Home")</li>
-                                <li role="presentation">@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                                @{
+                                    string Index = string.Empty;
+                                    if (@ViewContext.RouteData.Values["action"].ToString() == "Index")
+                                    {
+                                        Index = "active";
+                                    }
+                                    string About = string.Empty;
+                                    if (@ViewContext.RouteData.Values["action"].ToString() == "About")
+                                    {
+                                        About = "active";
+                                    }
+                                    string Services = string.Empty;
+                                    if (@ViewContext.RouteData.Values["action"].ToString() == "Services")
+                                    {
+                                        Services = "active";
+                                    }
+                                    string Portfolio = string.Empty;
+                                    if (@ViewContext.RouteData.Values["action"].ToString() == "Portfolio")
+                                    {
+                                        Portfolio = "active";
+                                    }
+                                    string Contact = string.Empty;
+                                    if (@ViewContext.RouteData.Values["action"].ToString() == "Contact")
+                                    {
+                                        Contact = "active";
+                                    }                                                                                                                                           
+                                        
+                                }
+
+                                <li role="presentation">@Html.ActionLink("Главная", "Index", "Home", null, new { @class = Index })</li>
+                                <li role="presentation">@Html.ActionLink("О компании", "About", "Home", null, new { @class = About })</li>
+                                <li role="presentation">@Html.ActionLink("Услуги", "Services", "Home", null, new { @class = Services })</li>
+                                <li role="presentation">@Html.ActionLink("Портфолио", "Portfolio", "Home", null, new { @class = Portfolio })</li>
+                                <li role="presentation">@Html.ActionLink("Контакты", "Contact", "Home", null, new { @class = Contact })</li>
                             </ul>
                         </div>
                     </div>
