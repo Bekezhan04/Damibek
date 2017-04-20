@@ -181,7 +181,7 @@
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Наши партнеры</h2>
+            <h2>Наши партнеры и технологии</h2>
             <p>Мы изпользуем их системное ПО для разработки прикладных решений</p>
         </div>
         <div class="partners">
@@ -200,13 +200,28 @@
         <div class="row">
             <div class="col-sm-8">
                 <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div class="pull-left">
-                        <i class="fa fa-phone"></i>
+                        <img src="~/images/Index/message.png" />
                     </div>
                     <div class="media-body">
-                        <h2>Хотите задать вопрос нам?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation +0123 456 70 80</p>
+                        <h1>Хотите про консультироваться?</h1>
+                        <h3>Напишите нам, наши специалисты свяжутся с вами!</h3>                       
+                            <a href="@Url.Action("_Message")"
+                               target="_blank"
+                               data-placement="top"
+                               class="modal-link"
+                               title="Открытие формы подтверждение удаление">    
+                                <img src="@Url.Content("~/images/Index/message_send.png")"/>
+                            </a>                                                  
                     </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>

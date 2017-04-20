@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Message";
+}
+@model Damibek.Models.Message
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Обратная связь</h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="modal-body">
+        <div class="container fill col-md-12" id="div_message"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.name, new { style = "color:black" }) <br />
+                            @Html.TextBoxFor(model => model.name, new { @class = "form-control", maxlength = "5000"})
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.email, new { style = "color:black" }) <br />
+                            @Html.TextBoxFor(model => model.email, new { @class = "form-control", maxlength = "5000" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.phone, new { style = "color:black" }) <br />
+                            @Html.TextBoxFor(model => model.phone, new { @class = "form-control", maxlength = "20" })
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.message, new { style = "color:black" }) <br />
+                            @Html.TextAreaFor(model => model.message, new { @class = "form-control", maxlength = "5000", rows = "8" })
+                        </div>
+                        <div class="form-group">
+                            <button type="button" name="btsend" id="btsend" class="btn btn-primary btn-lg">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#approve-btn').click(function () {
+            $('#modal-container').modal('hide');
+        });
+    });
+
+    $('#btsend').click(function (e) {
+
+        $('#div_message').empty();
+
+        //e.preventDefault();
+        var form = $("form").serialize();
+        $.ajax({
+            url: '_Message',
+            type: 'POST',
+            data: form,
+            success: function (result) {
+                successResponseServer(result);
+            }
+           , error: function () {
+               $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже?</div>');
+           }
+        });
+
+    });
+
+    function successResponseServer(response) {
+        if (response != null) {
+            if (response.ok) {
+                window.location = response.newurl;
+            }
+            else {
+                var json = JSON.parse(response);
+                if (json.message.length > 0) {
+                    $('#div_message').append(json.message);
+                }
+            }
+
+        }
+    }
+
+</script>

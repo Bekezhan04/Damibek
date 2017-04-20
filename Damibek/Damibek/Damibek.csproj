@@ -156,7 +156,9 @@
     </Compile>
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\IMessage.cs" />
     <Compile Include="Models\Index.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\Portfolio.cs" />
     <Compile Include="Models\Project.cs" />
@@ -191,6 +193,7 @@
     <Content Include="images\5.jpg" />
     <Content Include="images\6.jpg" />
     <Content Include="images\7.jpg" />
+    <Content Include="images\about\attention.png" />
     <Content Include="images\all\cloud_96.png" />
     <Content Include="images\all\Consulting_100.png" />
     <Content Include="images\all\mobile_app_96.png" />
@@ -216,6 +219,8 @@
     <Content Include="images\blog\thumb2.jpg" />
     <Content Include="images\blog\thumb3.jpg" />
     <Content Include="images\contact.png" />
+    <Content Include="images\Index\message.png" />
+    <Content Include="images\Index\message_send.png" />
     <Content Include="images\job_48.png" />
     <Content Include="images\key_48.png" />
     <Content Include="images\partnership_50.png" />
@@ -343,6 +348,7 @@
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Solution.cshtml" />
+    <Content Include="Views\Home\_Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

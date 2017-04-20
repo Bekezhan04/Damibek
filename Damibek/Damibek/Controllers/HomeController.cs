@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Damibek.DAL;
 using Damibek.Models;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Damibek.Controllers
 {
@@ -57,6 +59,35 @@ namespace Damibek.Controllers
         {
             Solution model = new Solution(id.ToString());
             return View(model);
+        }
+
+
+        [HttpGet]
+        public ActionResult _Message()
+        {
+            Message model = new Message();
+            return PartialView(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> _Message(Message model)
+        {
+            try
+            {
+                /*
+                 Нужно реализовать отправку почты и сохранение в БД.
+                 */
+                int y = 10 - 10;
+                int x = 10 / y;
+                return Json(new { ok = true, newurl = Url.Action("Index") });
+
+            }
+            catch (Exception ex)
+            {
+                model.message = ex.Message;
+                var jsonModel = JsonConvert.SerializeObject(model);
+                throw ex;
+            }
         }
 
 
