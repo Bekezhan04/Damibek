@@ -51,6 +51,8 @@ namespace Damibek.Controllers
         public ActionResult Contact()
         {
             Contact model = new Contact();
+            model.message = new Message();
+
             return View(model);
         }
 
@@ -88,6 +90,18 @@ namespace Damibek.Controllers
                 var jsonModel = JsonConvert.SerializeObject(model);
                 throw ex;
             }
+        }
+
+
+        [HttpGet]
+        public JsonResult GetProjects(string type)
+        {
+            Portfolio model = new Portfolio();
+            if (type != "all")
+            model.Projects = model.Projects.Where(m => m.projectType == type).ToList();
+
+            var jsonModel = JsonConvert.SerializeObject(model);
+            return Json(jsonModel, JsonRequestBehavior.AllowGet);
         }
 
 

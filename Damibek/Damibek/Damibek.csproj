@@ -349,6 +349,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Solution.cshtml" />
     <Content Include="Views\Home\_Message.cshtml" />
+    <Content Include="Views\Home\_MessageForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

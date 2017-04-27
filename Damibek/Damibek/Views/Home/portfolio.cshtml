@@ -14,33 +14,72 @@
         </div>
 
         <ul class="portfolio-filter text-center">
-            <li><a class="btn btn-default active" href="#" data-filter="*">Все проекты</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Веб разработка</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".html">Мобильные приложение iOS/Android</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".wordpress">Облачные технологии</a></li>
+            <li><a class="btn btn-default active" href="#" data-filter="t" id="all">Все проекты</a></li>
+            <li><a class="btn btn-default" href="#" data-filter="t" id="web">Веб разработка</a></li>
+            <li><a class="btn btn-default" href="#" data-filter="t" id="app">iOS/Android</a></li>
+            <li><a class="btn btn-default" href="#" data-filter="t" id="cloud">Облачные технологии</a></li>
+            <li><a class="btn btn-default" href="#" data-filter="t" id="allstack">Полный стэк</a></li>
         </ul><!--/#portfolio-filter-->
     </div>
     <div class="container">
         <div class="col-md-12">
             <div class="media">
-                <ul>
-                    
-                    @foreach (Project row in Model.Projects)
-                    {
-                        <li>
-                            <div class="media-left">
-                                <img src="~/images/portfolio/allow-30.png" />
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading"> @Html.ActionLink(@row.Name, "Solution", "Home", new { @id = @row.Id }, null)</h4>
-                                <p>
-                                    @row.Description
-                                </p>
-                            </div>
-                        </li>
-                    }           
+                <ul id="ulproject">
+                             
                 </ul>
             </div>
         </div>
     </div>
 </section><!--/#portfolio-item-->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        run_ajax('all');
+
+        $("a[data-filter='t']").click(function () {
+                run_ajax($(this).attr('id'));
+
+            });
+
+            function run_ajax(project_type)
+            {
+                $.ajax({
+                    type: "GET",
+                    data: { type: project_type },
+                    url: "/Home/GetProjects",
+                    success: function (response) {
+                        successResponseServer(response);
+                    },
+                    failure: function (response) {
+                        console.log('custume failure')
+                    },
+                    error: function (response) {
+                        console.log('custume error')
+                    }
+                });
+            }
+           
+            function successResponseServer(response) {
+                if (response != null) {
+                    var json = JSON.parse(response);
+                    $('#ulproject').empty();
+                    for (var i = 0; i < json.Projects.length; i++) {                          
+                        $('#ulproject').append('<li><div class="media-left">' +
+                                '<img src="/images/portfolio/allow-30.png" /></div>'+
+                            '<div class="media-body">' +
+                                '<h4 class="media-heading"><a href="/Home/Solution/' + json.Projects[i].Id + '">' + json.Projects[i].Name + '</a> </h4>' +
+                                '<p>' + json.Projects[i].Description +
+                                '</p></div></li>'
+                                );
+                    }
+                }
+                else
+                {
+                    console.log('response = null;');
+                }
+            }
+
+        });
+</script>

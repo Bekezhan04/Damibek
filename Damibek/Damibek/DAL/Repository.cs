@@ -29,7 +29,8 @@ namespace Damibek.DAL
             return dbXml.Descendants("Project").Where(m => Convert.ToBoolean(m.Element("Activ").Value))
                           .Select( x => new Project{   Name = x.Element("Caption").Value,
                                                           Description = x.Element("Description").Value,
-                                                          Id = x.Element("Id").Value
+                                                       Id = x.Element("Id").Value,
+                                                       projectType = x.Element("Type").Value
                                                        }
                            ).ToList();
             else
@@ -39,7 +40,8 @@ namespace Damibek.DAL
                               {
                                   Name = x.Element("Caption").Value,
                                   Description = x.Element("Description").Value,
-                                  Id = x.Element("Id").Value
+                                  Id = x.Element("Id").Value,
+                                  projectType = x.Element("Type").Value
                               }
                                ).ToList();
         }

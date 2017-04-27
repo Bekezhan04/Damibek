@@ -7,5 +7,6 @@ namespace Damibek.Models
 {
     public class Contact: ModelBase
     {
+        public Message message { get; set; }
     }
 }
