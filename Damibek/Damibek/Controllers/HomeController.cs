@@ -7,6 +7,8 @@ using Damibek.DAL;
 using Damibek.Models;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Net.Mail;
+using System.Net;
 
 namespace Damibek.Controllers
 {
@@ -78,8 +80,13 @@ namespace Damibek.Controllers
             {
                 try
                 {
-                    new EmailController().SendEmail(model).Deliver();
+                    var msg = new MailMessage("be04@yandex.ru", "bekabekejan@mail.ru", model.name, model.message);
+                    var smtpClient = new SmtpClient("smtp.yandex.ru", 25);
+                    smtpClient.Credentials = new NetworkCredential("be04@yandex.ru", "be041186");
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Send(msg);
 
+                    //new EmailController().SendEmail(model).Deliver();
                     return Json(new { ok = true, newurl = Url.Action("Index") });
                 }
                 catch (Exception ex)

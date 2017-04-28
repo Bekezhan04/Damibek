@@ -13,12 +13,9 @@ namespace Damibek.Controllers
         public EmailResult SendEmail(Message model)
         {
             To.Add("be04@yandex.kz");
-
             From = model.email;
-
             Subject = model.name;
-
-            return Email("SendEmail.html", model);
+            return Email("SendEmail", model);
         }
     }
 }
