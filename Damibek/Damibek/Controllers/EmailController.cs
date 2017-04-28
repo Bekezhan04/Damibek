@@ -18,7 +18,7 @@ namespace Damibek.Controllers
 
             Subject = model.name;
 
-            return Email("SendEmail", model);
+            return Email("SendEmail.html", model);
         }
     }
 }
