@@ -19,5 +19,7 @@ namespace Damibek.Models
         public string message { get; set; }
 
         public string to { get; set; }
+
+        public string messageError { get; set; }
     }
 }

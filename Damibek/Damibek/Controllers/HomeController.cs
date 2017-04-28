@@ -74,45 +74,30 @@ namespace Damibek.Controllers
         [HttpPost]
         public async Task<ActionResult> _Message(Message model)
         {
-            try
+            if (ModelState.IsValid)
             {
-
-                if (ModelState.IsValid)
+                try
                 {
-                    try
-                    {
-                        new EmailController().SendEmail(model).Deliver();
+                    new EmailController().SendEmail(model).Deliver();
 
-                       // return RedirectToAction("Success");
-                        return Json(new { ok = true, newurl = Url.Action("Index") });
-                    }
-                    catch (Exception ex)
-                    {
-                        return RedirectToAction("Error");
-                    }
+                    return Json(new { ok = true, newurl = Url.Action("Index") });
                 }
-                return View(model);
-
-
-
-                /*
-                 Нужно реализовать отправку почты и сохранение в БД.
-                 */
-                int y = 10 - 10;
-                int x = 10 / y;
-                return Json(new { ok = true, newurl = Url.Action("Index") });
-
-
-
-
-
+                catch (Exception ex)
+                {
+                    string sMsg = "Class Exception=Exception; ";
+                    sMsg = sMsg + "TargetSite=" + ex.TargetSite + "; Message=" + ex.Message + "; StackTrace=" + ex.StackTrace;
+                    model.messageError = sMsg;
+                    //throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                model.message = ex.Message;
-                var jsonModel = JsonConvert.SerializeObject(model);
-                throw ex;
-            }
+            var jsonModel1 = JsonConvert.SerializeObject(model);
+            return Json(jsonModel1, JsonRequestBehavior.AllowGet);
+            /*
+               Нужно реализовать отправку почты и сохранение в БД.
+            */
+            //int y = 10 - 10;
+            //int x = 10 / y;
+            //return Json(new { ok = true, newurl = Url.Action("Index") });
         }
 
 

@@ -57,7 +57,11 @@
                     successResponseServer(result);
                 }
                , error: function () {
-                   $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже?</div>');
+                   var json = JSON.parse(result);
+                   $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже? '
+                       + json.messageError
+                       +
+                       '</div>');
                }
             });
 
@@ -70,8 +74,13 @@
                 }
                 else {
                     var json = JSON.parse(response);
-                    if (json.message.length > 0) {
-                        $('#div_message').append(json.message);
+                    if (json.messageError.length > 0) {
+                        var json = JSON.parse(response);
+                        $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже? '
+                            + json.messageError
+                            +
+                            '</div>');
+
                     }
                 }
 
