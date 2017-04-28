@@ -80,13 +80,15 @@ namespace Damibek.Controllers
             {
                 try
                 {
-                    var msg = new MailMessage("be04@yandex.ru", "bekabekejan@mail.ru", model.name, model.message);
+                    var msg = new MailMessage( "gdc7@yandex.ru"
+                                             , "be04@yandex.ru"
+                                             , "GOODDEAL " + model.name
+                                             , model.message
+                                             );
                     var smtpClient = new SmtpClient("smtp.yandex.ru", 25);
-                    smtpClient.Credentials = new NetworkCredential("be04@yandex.ru", "be041186");
+                    smtpClient.Credentials = new NetworkCredential("gdc7@yandex.ru", "gd28042017");
                     smtpClient.EnableSsl = true;
                     smtpClient.Send(msg);
-
-                    //new EmailController().SendEmail(model).Deliver();
                     return Json(new { ok = true, newurl = Url.Action("Index") });
                 }
                 catch (Exception ex)
