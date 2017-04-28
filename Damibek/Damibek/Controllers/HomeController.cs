@@ -83,7 +83,7 @@ namespace Damibek.Controllers
                     var msg = new MailMessage( "gdc7@yandex.ru"
                                              , "be04@yandex.ru"
                                              , "GOODDEAL " + model.name
-                                             , model.message
+                                             , model.message + ". Представитель: " + model.name + ", тел: " + model.phone + ", email: " + model.email + "."
                                              );
                     var smtpClient = new SmtpClient("smtp.yandex.ru", 25);
                     smtpClient.Credentials = new NetworkCredential("gdc7@yandex.ru", "gd28042017");
@@ -101,12 +101,6 @@ namespace Damibek.Controllers
             }
             var jsonModel1 = JsonConvert.SerializeObject(model);
             return Json(jsonModel1, JsonRequestBehavior.AllowGet);
-            /*
-               Нужно реализовать отправку почты и сохранение в БД.
-            */
-            //int y = 10 - 10;
-            //int x = 10 / y;
-            //return Json(new { ok = true, newurl = Url.Action("Index") });
         }
 
 
