@@ -76,12 +76,35 @@ namespace Damibek.Controllers
         {
             try
             {
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        new EmailController().SendEmail(model).Deliver();
+
+                       // return RedirectToAction("Success");
+                        return Json(new { ok = true, newurl = Url.Action("Index") });
+                    }
+                    catch (Exception ex)
+                    {
+                        return RedirectToAction("Error");
+                    }
+                }
+                return View(model);
+
+
+
                 /*
                  Нужно реализовать отправку почты и сохранение в БД.
                  */
                 int y = 10 - 10;
                 int x = 10 / y;
                 return Json(new { ok = true, newurl = Url.Action("Index") });
+
+
+
+
 
             }
             catch (Exception ex)

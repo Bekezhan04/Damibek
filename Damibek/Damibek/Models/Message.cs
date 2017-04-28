@@ -17,5 +17,7 @@ namespace Damibek.Models
         public string phone { get; set; }
         [Display(Name="Сообщение")]
         public string message { get; set; }
+
+        public string to { get; set; }
     }
 }
