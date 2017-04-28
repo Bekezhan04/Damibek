@@ -50,16 +50,19 @@
             //e.preventDefault();
             var form = $("form").serialize();
             $.ajax({
-                url: '_Message',
+                url: '/Home/_Message',
                 type: 'POST',
                 data: form,
                 success: function (result) {
                     successResponseServer(result);
                 }
-               , error: function () {
-                   var json = JSON.parse(result);
+               , error: function (jqXHR, textStatus, errorThrown) {;
                    $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже? '
-                       + json.messageError
+                       + jqXHR.status
+                       + ' ' 
+                       + textStatus
+                       + ' '
+                       + errorThrown
                        +
                        '</div>');
                }
