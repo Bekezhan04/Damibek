@@ -8,62 +8,11 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     <h4 class="modal-title" id="myModalLabel">Обратная связь</h4>
 </div>
+<div class="modal-body">
+     @Html.Partial("~/Views/Home/_MessageForm.cshtml", @Model.message)
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+</div>
 
-@using (Html.BeginForm())
-{
-    <div class="modal-body">
-        <div class="container fill col-md-12" id="div_message"/>
-            <div class="container">
-                <div class="row">
-                    @Html.Partial("~/Views/Home/_MessageForm.cshtml", @Model.message)
-                </div>
-            </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-    </div>
-}
 
-<script type="text/javascript">
-    $(function () {
-        $('#approve-btn').click(function () {
-            $('#modal-container').modal('hide');
-        });
-    });
-
-    $('#btsend').click(function (e) {
-
-        $('#div_message').empty();
-
-        //e.preventDefault();
-        var form = $("form").serialize();
-        $.ajax({
-            url: '_Message',
-            type: 'POST',
-            data: form,
-            success: function (result) {
-                successResponseServer(result);
-            }
-           , error: function () {
-               $('#div_message').append('<div class="alert alert-warning" role="alert">Ошибка при отправке, пожалуйста попробуете позже?</div>');
-           }
-        });
-
-    });
-
-    function successResponseServer(response) {
-        if (response != null) {
-            if (response.ok) {
-                window.location = response.newurl;
-            }
-            else {
-                var json = JSON.parse(response);
-                if (json.message.length > 0) {
-                    $('#div_message').append(json.message);
-                }
-            }
-
-        }
-    }
-
-</script>

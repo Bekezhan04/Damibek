@@ -7,12 +7,14 @@
 @model Damibek.Models.Contact
 
 <div class="map">
-    <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kuningan,+Jakarta+Capital+Region,+Indonesia&amp;aq=3&amp;oq=kuningan+&amp;sll=37.0625,-25.677068&amp;sspn=37.410045,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Kuningan&amp;t=m&amp;z=10&amp;ll=-6.238824,106.830177&amp;output=embed"></iframe>
+    <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kuningan,+Jakarta+Capital+Region,+Indonesia&amp;aq=3&amp;oq=kuningan+&amp;sll=37.0625,-25.677068&amp;sspn=37.410045,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Almaty&amp;t=m&amp;z=10&amp;ll=-6.238824,106.830177&amp;output=embed"></iframe>
 </div>
 
 <section id="contact-page">
-    <div class="container">
+        <div class="text-center">
+            <h3>Напишите нам, наши специалисты свяжутся с вами!</h3>
+        </div>
+        <hr class="hr_service">
         @Html.Partial("~/Views/Home/_MessageForm.cshtml", @Model.message)
-    </div><!--/.container-->
 </section><!--/#contact-page-->
 
