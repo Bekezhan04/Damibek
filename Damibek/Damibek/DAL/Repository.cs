@@ -60,7 +60,7 @@ namespace Damibek.DAL
         }
 
         public string GetPageNameByCode(string code)
-        {
+        {//
             return dbXml.Descendants("Page").Where(m => m.Element("code").Value == code)
                               .Select(x => x.Element("name").Value ).FirstOrDefault();
         }
